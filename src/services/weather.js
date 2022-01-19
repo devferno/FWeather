@@ -4,7 +4,7 @@ const url = "https://community-open-weather-map.p.rapidapi.com/";
 
 const headers = {
   "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-  "x-rapidapi-key": "0c894bfbc4mshef7daa8330c4f18p1fdc73jsn2b0dd3aa5867",
+  "x-rapidapi-key": process.env.REACT_APP_KEY,
 };
 
 export const weather = createApi({

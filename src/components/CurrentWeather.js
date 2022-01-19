@@ -41,7 +41,10 @@ const CurrentWeather = () => {
   if (isFetching) {
     return <p>...loading</p>;
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> f93c80f6bf9df0d18bc1993216850bfecab68b2f
   const { main, visibility, wind, weather } = data;
   return (
     <Paper

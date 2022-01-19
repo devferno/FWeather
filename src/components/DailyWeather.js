@@ -27,7 +27,11 @@ const DailyWeather = () => {
     const date = new Date(dt * 1000);
     return days[date.getDay()];
   };
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f93c80f6bf9df0d18bc1993216850bfecab68b2f
   return (
     <Grid container>
       {data.list.map((item, index) => (

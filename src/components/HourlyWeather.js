@@ -23,7 +23,11 @@ const HourlyWeather = () => {
   if (isError) {
     return <Paper elevation={0}>error in server try later</Paper>;
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> f93c80f6bf9df0d18bc1993216850bfecab68b2f
   return (
     <Paper elevation={0} variant="outlined" sx={{ px: 3, py: 3 }}>
       <RenderLineChart data={createArray(data.list.slice(0, 8))} />

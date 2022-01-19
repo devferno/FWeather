@@ -35,7 +35,7 @@ const Navbar = () => {
       >
         <InputBase
           placeholder="search by city name"
-          sx={{ m: 0 }}
+          sx={{ m: 0, width: "150px" }}
           onChange={handleChange}
           value={cityName}
         />

@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useGetCurrentWeatherQuery } from "../services/weather";
 import AcUnitOutlinedIcon from "@mui/icons-material/AcUnitOutlined";
 import WaterRoundedIcon from "@mui/icons-material/WaterRounded";
+import React from "react";
 export const InfoBox = ({ name, info, arg }) => {
   return (
     <Box
@@ -35,17 +36,19 @@ export const SwitchIcon = ({ main }) => {
     return <WaterRoundedIcon sx={{ fontSize: "70px", color: "#2E4C6D" }} />;
   }
 };
+const today = new Date();
+const date =
+  today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+const time = today.getHours() + ":" + today.getMinutes();
+const dateTime = date + " " + time;
 const CurrentWeather = () => {
   const city = useSelector((state) => state.city.name);
   const { data, isFetching } = useGetCurrentWeatherQuery(city);
   if (isFetching) {
     return <p>...loading</p>;
   }
-<<<<<<< HEAD
-  
-=======
->>>>>>> f93c80f6bf9df0d18bc1993216850bfecab68b2f
   const { main, visibility, wind, weather } = data;
+
   return (
     <Paper
       variant="outlined"
@@ -64,9 +67,11 @@ const CurrentWeather = () => {
           {Math.floor(main.temp)}°
           <SwitchIcon main={weather[0].main} />
         </Typography>
+
         <Typography sx={{ color: "#111111" }} variant="body1">
-          Tuesday 01-18-2022
+          {dateTime}
         </Typography>
+
         <Typography sx={{ my: 2 }} variant="h6">
           {city}
         </Typography>
